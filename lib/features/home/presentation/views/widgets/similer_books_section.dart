@@ -18,9 +18,12 @@ class SimilerBooksSection extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 30,
         ),
         const SimilerBooksListView(),
+        const SizedBox(
+          height: 20,
+        ),
       ],
     );
   }
