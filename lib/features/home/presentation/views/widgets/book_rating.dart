@@ -10,7 +10,7 @@ class BookRating extends StatelessWidget {
       required this.rating,
       required this.count});
   final MainAxisAlignment mainAxisAlignment;
-  final int rating;
+  final dynamic rating;
   final int count;
   @override
   Widget build(BuildContext context) {

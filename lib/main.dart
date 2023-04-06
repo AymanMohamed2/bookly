@@ -4,7 +4,6 @@ import 'package:bookly/features/home/presentation/manager/featured_books_cubit/f
 import 'package:bookly/features/home/presentation/manager/newset_books_cubit/newset_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'constants.dart';
 import 'core/utils/app_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
