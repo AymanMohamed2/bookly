@@ -1,13 +1,13 @@
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/core/models/book_model/item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_details_section.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/recommended_books_section.dart';
 import 'package:flutter/material.dart';
-
-import 'books_details_section.dart';
-import 'custom_book_details_app_bar.dart';
-import 'similer_books_section.dart';
+import 'package:flutter/widgets.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key, required this.bookModel});
-  final BookModel bookModel;
+  const BookDetailsViewBody({super.key, required this.item});
+
+  final Item item;
 
   @override
   Widget build(BuildContext context) {
@@ -15,24 +15,23 @@ class BookDetailsViewBody extends StatelessWidget {
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Column(
-              children: [
-                const CustomBookDetailsAppBar(),
-                BookDetailsSection(
-                  bookModel: bookModel,
+          child: Column(
+            children: [
+              BookDetailsSection(
+                item: item,
+              ),
+              const Expanded(
+                child: SizedBox(
+                  height: 1,
                 ),
-                const Expanded(
-                  child: SizedBox(
-                    height: 10,
-                  ),
-                ),
-                const SimilerBooksSection(),
-              ],
-            ),
+              ),
+              const RecommendedBooksSection(),
+              const SizedBox(
+                height: 28,
+              ),
+            ],
           ),
-        ),
+        )
       ],
     );
   }
